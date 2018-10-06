@@ -1,0 +1,39 @@
+package br.com.yaman;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CadastrarNovoUsuario {
+	
+	private WebDriver driver;
+	
+	
+	@Before
+	public void inicializa() {
+		driver = new ChromeDriver();
+		driver.get("https://srbarriga.herokuapp.com/cadastro");
+	}
+	
+	@After
+	public void finaliza() {
+		driver.quit();
+	}
+	
+	public void cadastrUsuario() {
+		WebElement nome = driver.findElement(By.id("nome")); nome.sendKeys("Rafael");
+		driver.findElement(By.id("email")).sendKeys("rafael_limasilva@gmail.com.bc");
+		driver.findElement(By.id("senha")).sendKeys("1234567");
+		
+		nome.submit();
+		
+		boolean usuarioCadastrado = driver.getPageSource().contains("Usuário inserido com sucesso");
+		assertTrue(usuarioCadastrado);
+
+	}
+
+}

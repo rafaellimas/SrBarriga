@@ -1,0 +1,11 @@
+package br.com.yaman;import org.openqa.selenium.WebDriver;
+
+public class cadastrarNovoUsuario {
+
+	public static void main(String[] args) {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://srbarriga.herokuapp.com/cadastro");
+
+	}
+
+}

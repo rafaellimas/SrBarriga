@@ -1,0 +1,6 @@
+
+public class cadastrarNovoUsuario {
+	
+	private WebDriver driver;
+
+}

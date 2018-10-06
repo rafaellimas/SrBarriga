@@ -1,0 +1,9 @@
+package br.com.caelum.teste;
+
+import org.openqa.selenium.WebDriver;
+
+public class NovoUsuarioPage {
+	
+	private WebDriver driver;
+
+}

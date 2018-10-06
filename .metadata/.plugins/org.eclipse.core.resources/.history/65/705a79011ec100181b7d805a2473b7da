@@ -1,0 +1,12 @@
+package br.com.yaman;
+
+public class adicionarConta {
+	
+	private WebDriver = new driver;
+	
+	@After
+	public void inicializa() {
+		
+	}
+
+}

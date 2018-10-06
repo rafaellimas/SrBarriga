@@ -1,0 +1,25 @@
+package br.com.yaman;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class AdicionarConta extends BasePage {
+
+	private WebDriver driver;
+	
+	public AdicionarConta(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void setNome(String nome) {
+		escrever("nome", nome);
+	}
+	
+	public void salvar() {
+		clicarBotao(By.xpath("//Button[.='Salvar']"));
+	}
+	
+	public String obterMensagemSucesso() {
+		return obterTexto(By.xpath("//div[@=class'alert alert-success']"));
+	}
+}

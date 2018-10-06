@@ -1,0 +1,51 @@
+package br.com.yaman;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Runner2 {
+
+	private WebDriver driver;
+	private CadastrarNovoUsuario cadastrar = new CadastrarNovoUsuario(driver);
+	private AdicionarConta adicionar = new AdicionarConta(driver);
+	private Login login = new Login(driver);
+	
+	@Before
+	public void inicializa() {
+		driver = new ChromeDriver();
+		driver.get("https://srbarriga.herokuapp.com/cadastro");
+	}
+
+	@Test
+	public void cadastrarNovoUsuario() {
+		cadastrar.sendNome("nome", "Rafael");
+		cadastrar.sendEmail("email", "rafael@test4");
+		cadastrar.sendSenha("senha","12345678");
+		cadastrar.salvar();
+		
+		cadastrar.obterTextos();
+	}
+
+	@Test
+	public void logarAplicacao() {
+		login.acessarTelaInicial();
+
+		login.sendEmail("rafael@teste");
+		login.sendSenha("12345678");
+		login.entrar();
+	}
+
+	@Test
+	public void inserirConta() {
+		login.logar("rafael@teste", "12345678");
+		adicionar.clicarLink("Contas");
+		adicionar.clicarLink("Adicionar");
+		
+		adicionar.sendNome("Santander SA.");
+		adicionar.salvar();
+
+		adicionar.obterTextos();
+	}
+}

@@ -1,0 +1,15 @@
+package br.com.yaman;
+
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
+
+public class login {
+	
+	private WebDriver driver;
+	
+	@Before
+	public void fazerLogin(){
+		driver = new ChromeDriver;
+	}
+
+}

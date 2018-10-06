@@ -1,0 +1,15 @@
+package br.com.yaman;
+
+import org.openqa.selenium.WebDriver;
+
+private WebDriver driver;
+
+public class Runner2 {
+	
+	CadastrarNovoUsuario cadastrarNovoUsuario = new CadastrarNovoUsuario();
+	Login login = new Login();
+	AdicionarConta adicionarconta = new AdicionarConta();
+	
+	@Test
+
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Runner2.logarAplicacao" project="TesteYaman" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.yaman.Runner2" time="10.966" uniqueid="[engine:junit-vintage]/[runner:br.com.yaman.Runner2]">
+    <testcase name="logarAplicacao" classname="br.com.yaman.Runner2" time="10.966" displayname="logarAplicacao" uniqueid="[engine:junit-vintage]/[runner:br.com.yaman.Runner2]/[test:logarAplicacao(br.com.yaman.Runner2)]"/>
+  </testsuite>
+</testrun>

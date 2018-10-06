@@ -1,0 +1,29 @@
+package br.com.yaman;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+public class Runner2 {
+	
+	private WebDriver driver;
+
+	@Before
+	public void inicializa() {
+		driver = new ChromeDriver();
+		driver.get("https://srbarriga.herokuapp.com/cadastro");
+
+	CadastrarNovoUsuario cadastrarNovoUsuario = new CadastrarNovoUsuario();
+	Login login = new Login();
+	AdicionarConta adicionarconta = new AdicionarConta();
+
+	@Test
+	public void testeCadastro() {
+//		cadastrarNovoUsuario.cadastrUsuario();
+		
+		login.loginAplicacao();
+		
+		adicionarconta.adicionarContas();
+	}
+
+}

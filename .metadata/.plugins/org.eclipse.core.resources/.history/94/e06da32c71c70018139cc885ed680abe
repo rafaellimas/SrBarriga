@@ -1,0 +1,53 @@
+package br.com.yaman;
+
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+
+public class CadastrarNovoUsuario extends BasePage {
+
+	private WebDriver driver;
+
+	@Before
+	public void inicializa() {
+		driver = new ChromeDriver();
+		driver.get("https://srbarriga.herokuapp.com/cadastro");
+	}
+
+	@After
+	public void finaliza() {
+		driver.quit();
+	}
+
+	WebElement = sendNome driver.findElement(By.id("id_campo"));
+	sendNome.sendKeys(nome);
+
+	public void sendEmail(String id_campo, String email) {
+		driver.findElement(By.id(id_campo)).sendKeys(email);
+
+	}
+
+	public void sendSenha(String id_campo, String senha) {
+		driver.findElement(By.id(id_campo)).sendKeys(senha);
+
+	}
+
+	public void salvar() {
+		clicarBotao(By.xpath("//input[@value='Cadastrar']"));
+	}
+
+	public void AcessarTelaInserirConta() {
+		clicarLink("Contas");
+		clicarLink("Adicionar");
+
+	}
+
+	public String obterMensagemSucesso() {
+		return obterTexto(By.xpath("//div[@=class'alert alert-success']"));
+
+	}
+
+}

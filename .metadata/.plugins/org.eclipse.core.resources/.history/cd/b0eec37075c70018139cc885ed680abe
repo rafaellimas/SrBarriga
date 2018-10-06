@@ -1,0 +1,48 @@
+package br.com.yaman;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class CadastrarNovoUsuario extends BasePage {
+
+	private WebDriver driver;
+
+	public CadastrarNovoUsuario(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void sendNome(String id_campo, String nome) {
+		driver.findElement(By.id(id_campo)).sendKeys(nome);
+
+	}
+
+	public void sendEmail(String id_campo, String email) {
+		driver.findElement(By.id(id_campo)).sendKeys(email);
+
+	}
+
+	public void sendSenha(String id_campo, String senha) {
+		driver.findElement(By.id(id_campo)).sendKeys(senha);
+
+	}
+
+	public void salvar(String id_campo) {
+		driver.findElement(By.xpath(id_campo)).click();
+	}
+
+//	public void salvar() {
+//		clicarBotao(By.xpath("//input[@value='Cadastrar']"));
+//	}
+
+	public void AcessarTelaInserirConta() {
+		clicarLink("Contas");
+		clicarLink("Adicionar");
+
+	}
+
+	public String obterMensagemSucesso() {
+		return obterTexto(By.xpath("//div[@=class'alert alert-success']"));
+
+	}
+
+}

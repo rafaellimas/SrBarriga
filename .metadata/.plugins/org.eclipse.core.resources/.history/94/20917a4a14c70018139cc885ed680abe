@@ -1,0 +1,46 @@
+package br.com.yaman;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+public class Runner2 extends BasePage {
+	
+	private WebDriver driver;
+	
+	private Login login = new Login();
+	private CadastrarNovoUsuario cadastrar = new CadastrarNovoUsuario();
+	
+	@Before
+	public void inicializa() {
+		login.acessarTelaInicial();
+		
+		login.setEmail("rafael_limasilva@gmail.com.bc");
+		login.setSenha("1234567");
+		login.entrar();
+	}
+	
+	@After
+	public void finaliza() {
+		driver.quit();
+	}
+	
+	@Test
+	public void cadastrarNovoUsuario() {
+		cadastrar.cadastrUsuario();
+		
+	}
+	
+	@Test
+	public void inserirConta() {
+		
+	}
+	
+	@Test
+	public void adicionarConta() {
+		
+	}
+
+
+}

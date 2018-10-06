@@ -1,0 +1,22 @@
+package br.com.yaman;
+
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
+
+public class Runner2 extends BasePage {
+	
+	private WebDriver driver;
+	
+	private Login login = new Login();
+	
+	@Before
+	public void inicializa() {
+		login.acessarTelaInicial();
+		
+		login.setEmail("rafael_limasilva@gmail.com.bc");
+		login.setSenha("1234567");
+		login.entrar();
+	}
+
+
+}

@@ -1,0 +1,30 @@
+package br.com.yaman;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class AdicionarConta  {
+
+	private WebDriver driver;
+	
+	public AdicionarConta(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void clicarLink(String link) {
+		driver.findElement(By.linkText(link)).click();
+	}
+
+	public void setNome(String nome) {
+		escrever("nome", nome);
+	}
+	
+	public void salvar() {
+		clicarBotao(By.xpath("//Button[.='Salvar']"));
+	}
+	
+	
+	public String obterTextos() {
+		return driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
+	}
+}

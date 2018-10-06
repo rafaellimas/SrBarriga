@@ -1,0 +1,60 @@
+package br.com.yaman;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Runner2 extends BasePage {
+
+	private WebDriver driver;
+
+	private Login login = new Login();
+	private CadastrarNovoUsuario cadastrar = new CadastrarNovoUsuario();
+	private AdicionarConta adicionar = new AdicionarConta();
+	
+	@Before
+	public void inicializa() {
+		driver = new ChromeDriver();
+		driver.get("https://srbarriga.herokuapp.com/cadastro");
+	}
+
+	@After
+	public void finaliza() {
+		driver.quit();
+	}
+	
+	
+
+	@Test
+	public void cadastrarNovoUsuario() {
+		cadastrar.setNome("Rafael");
+		cadastrar.setEmail("rafaell@teste");
+		cadastrar.setSenha("12345678");
+
+		cadastrar.clicarLink("Contas");
+		cadastrar.clicarLink("Adicionar");
+
+		Assert.assertEquals("Bem vindo,Rafael", adicionar.obterMensagemSucesso());
+
+	}
+
+	@Test
+	public void acessarTelainicial() {
+		login.acessarTelaInicial();
+
+		login.setEmail("rafael@teste");
+		login.setSenha("12345678");
+		login.entrar();
+	}
+
+	@Test
+	public void inserirConta() {
+		adicionar.setNome("Santander SA.");
+		adicionar.salvar();
+
+		Assert.assertEquals("Usuário inserido com sucesso", adicionar.obterMensagemSucesso());
+	}
+}

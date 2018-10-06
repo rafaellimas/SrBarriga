@@ -1,0 +1,38 @@
+package br.com.yaman;
+
+import org.junit.After;
+import org.junit.Before;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Login extends BasePage {
+
+	private WebDriver driver;
+	public Login(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void acessarTelaInicial(){
+		driver.get("http://srbarriga.herokuapp.com");
+	}
+	
+	public void setEmail(String email) {
+		escrever("email", email);
+	}
+	
+	public void setSenha(String senha) {
+		escrever("senha", senha);
+	}
+	
+	public void entrar(){
+		clicarBotao(By.xpath("//button[.='Entrar']"));
+	}
+	
+	public void logar(String email, String senha) {
+		setEmail(email);
+		setSenha(senha);
+		entrar();
+	}
+
+}

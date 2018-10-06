@@ -1,0 +1,16 @@
+package br.com.yaman;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Runner2 {
+	
+	private WebDriver driver;
+	
+	/********* TextField e TextArea ************/
+	
+	public void escrever(String id_campo, String texto){
+		driver.findElement(By.id(id_campo)).sendKeys(texto);
+	}
+
+}

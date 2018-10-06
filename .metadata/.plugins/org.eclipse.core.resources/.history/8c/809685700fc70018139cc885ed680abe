@@ -1,0 +1,13 @@
+package br.com.yaman;
+
+import org.openqa.selenium.WebDriver;
+
+public class Runner2 extends BasePage {
+	
+	private WebDriver driver;
+	
+	private Login login = new Login();
+	
+
+
+}

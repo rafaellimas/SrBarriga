@@ -1,0 +1,22 @@
+package br.com.yaman;
+
+import org.junit.Test;
+
+public class Runner2 {
+	
+	
+
+	CadastrarNovoUsuario cadastrarNovoUsuario = new CadastrarNovoUsuario();
+	Login login = new Login();
+	AdicionarConta adicionarconta = new AdicionarConta();
+
+	@Test
+	public void testeCadastro() {
+//		cadastrarNovoUsuario.cadastrUsuario();
+		
+		login.loginAplicacao();
+		
+		adicionarconta.adicionarContas();
+	}
+
+}

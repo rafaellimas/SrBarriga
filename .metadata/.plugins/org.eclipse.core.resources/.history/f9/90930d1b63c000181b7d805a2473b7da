@@ -1,0 +1,11 @@
+package br.com.caelum.teste;
+
+public class UsuariosPage {
+	
+	private WebDriver driver;
+	
+	public void visita() {
+		driver.get("https://google.com.br");		
+	}
+
+}

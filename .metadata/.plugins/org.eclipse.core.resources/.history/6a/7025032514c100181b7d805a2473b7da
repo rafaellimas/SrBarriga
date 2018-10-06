@@ -1,0 +1,7 @@
+public class cadastrarNovoUsuario {
+	
+	private void MAIN() {
+		WebDriver driver = new ChromeDriver();
+	}
+
+}

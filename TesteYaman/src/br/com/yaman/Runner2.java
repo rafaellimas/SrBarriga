@@ -8,16 +8,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Runner2 {
 
 	private WebDriver driver;
-	
+	private CadastrarNovoUsuario cadastrar; 
+	private Login login;
+	private AdicionarConta adicionar;
+
 	@Before
 	public void inicializa() {
 		driver = new ChromeDriver();
 		driver.get("https://srbarriga.herokuapp.com/cadastro");
+		this.adicionar = new AdicionarConta(driver);
+		this.cadastrar = new CadastrarNovoUsuario(driver);
+		this.login = new Login(driver);
+		
 	}
 
 	@Test
 	public void cadastrarNovoUsuario() {
-		CadastrarNovoUsuario cadastrar = new CadastrarNovoUsuario(driver);
 		cadastrar.sendNome("Rafael");
 		cadastrar.sendEmail("rafael@test5");
 		cadastrar.sendSenha("12345678");
@@ -26,7 +32,6 @@ public class Runner2 {
 
 	@Test
 	public void logarAplicacao() {
-		Login login = new Login(driver);
 		login.clicarBotao();
 		login.sendEmail("rafael@teste");
 		login.sendSenha("12345678");
@@ -35,13 +40,11 @@ public class Runner2 {
 
 	@Test
 	public void inserirConta() {
-		Login login = new Login(driver);
-		AdicionarConta adicionar = new AdicionarConta(driver);
 		login.clicarBotao();
-		login.logar("rafael@teste", "12345678");
+		login.logar("rafael@teste2", "12345678");
 		adicionar.clicarLink("Contas");
 		adicionar.clicarLink("Adicionar");
-		
+
 		adicionar.sendNome("Santander SA.");
 		adicionar.salvar();
 

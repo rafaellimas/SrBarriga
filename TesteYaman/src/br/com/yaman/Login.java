@@ -11,10 +11,6 @@ public class Login {
 		this.driver = driver;
 	}
 
-	public void acessarTelaInicial() {
-		driver.get("http://srbarriga.herokuapp.com/login");
-	}
-	
 	public void clicarBotao() {
 		driver.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
 	}
